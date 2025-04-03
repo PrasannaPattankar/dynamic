@@ -32,7 +32,7 @@
       }
     },
     {
-      "plugin": "@nx/rspack/plugin",
+      "plugin": "@nx/rsbuild/plugin",
       "options": {
         "buildTargetName": "build",
         "serveTargetName": "serve",
@@ -87,7 +87,7 @@
         "babel": true,
         "style": "css",
         "linter": "eslint",
-        "bundler": "rspack"
+        "bundler": "rsbuild"
       },
       "component": {
         "style": "css"
