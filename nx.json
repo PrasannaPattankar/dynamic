@@ -15,8 +15,6 @@
       "!{projectRoot}/test-setup.[jt]s"
     ],
     "sharedGlobals": [
-      // Optional: only include truly global workflow changes
-      // Or remove this entirely if `.github` changes shouldn't trigger all builds
       "{workspaceRoot}/nx.json",
       "{workspaceRoot}/package.json",
       "{workspaceRoot}/tsconfig.base.json"
