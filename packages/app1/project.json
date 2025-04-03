@@ -6,31 +6,29 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nx/rsbuild:rsbuild",
+      "executor": "nx:run-commands",
       "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/packages/app1",
-        "config": "packages/app1/rsbuild.config.ts"
+        "command": "rsbuild build --config packages/app1/rsbuild.config.ts",
+        "cwd": "packages/app1"
       },
+      "defaultConfiguration": "production",
       "configurations": {
         "development": {
-          "watch": true
+          "command": "rsbuild build --config packages/app1/rsbuild.config.ts --watch",
+          "cwd": "packages/app1"
         },
-        "production": {}
+        "production": {
+          "command": "rsbuild build --config packages/app1/rsbuild.config.ts",
+          "cwd": "packages/app1"
+        }
       }
     },
     "serve": {
-      "executor": "@nx/rsbuild:dev-server",
+      "executor": "nx:run-commands",
       "options": {
-        "buildTarget": "app1:build:development",
-        "port": 4201
-      },
-      "configurations": {
-        "development": {},
-        "production": {
-          "buildTarget": "app1:build:production"
-        }
+        "command": "rsbuild start --config packages/app1/rsbuild.config.ts",
+        "cwd": "packages/app1"
       }
     },
     "lint": {
