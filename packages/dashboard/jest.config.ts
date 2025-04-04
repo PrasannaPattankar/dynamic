@@ -1,5 +1,5 @@
 export default {
-  displayName: 'dashboard',
+  displayName: 'dashboard', // change for app2, app1 etc.
   preset: '../../jest.preset.js',
   transform: {
     '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nx/react/plugins/jest',
@@ -9,7 +9,7 @@ export default {
   coverageDirectory: '../../coverage/packages/dashboard',
   globals: {
     'ts-jest': {
-      tsconfig: '<rootDir>/tsconfig.jest.json', // ✅ Make sure it's this file
+      tsconfig: '<rootDir>/tsconfig.spec.json', // ✅ explicitly point to the correct one
     },
   },
 };

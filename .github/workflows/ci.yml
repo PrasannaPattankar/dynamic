@@ -34,7 +34,8 @@ jobs:
 
       - name: Run affected targets (lint, test, build)
         env:
-          TS_NODE_COMPILER_OPTIONS: '{"module":"commonjs"}'
+          TS_NODE_COMPILER_OPTIONS: '{"module":"NodeNext","moduleResolution":"NodeNext"}'
+          NODE_OPTIONS: "--loader ts-node/esm"
         run: |
           npx nx affected --target=lint --target=test --target=build \
             --base=$NX_BASE --head=$NX_HEAD --parallel

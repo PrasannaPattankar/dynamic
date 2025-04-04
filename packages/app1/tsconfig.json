@@ -1,20 +1,18 @@
 {
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "jsx": "react-jsx",
     "allowJs": false,
-    "esModuleInterop": false,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true
+    "strict": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext"
   },
-  "files": [],
-  "include": [],
+  "include": ["src", "src/remotes.d.ts"],
   "references": [
-    {
-      "path": "./tsconfig.app.json"
-    },
     {
       "path": "./tsconfig.spec.json"
     }
-  ],
-  "extends": "../../tsconfig.base.json"
+  ]
 }
