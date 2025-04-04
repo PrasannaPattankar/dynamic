@@ -1,15 +1,16 @@
 import { defineConfig } from '@rsbuild/core';
 import { pluginReact } from '@rsbuild/plugin-react';
+import path from 'path';
 
 export default defineConfig({
   plugins: [pluginReact()],
   html: {
     title: 'App2',
-    template: './src/index.html', // ✅ makes sure to use the HTML file
+    template: path.resolve(__dirname, 'src/index.html'), // ✅ Absolute path works reliably
   },
   source: {
     entry: {
-      index: './src/main.tsx', // ✅ must match the new entry file
+      index: './src/main.tsx',
     },
   },
   output: {
