@@ -34,7 +34,6 @@ jobs:
 
       - name: Run affected targets (lint, test, build)
         env:
-          TS_NODE_PROJECT: tsconfig.spec.json
           TS_NODE_COMPILER_OPTIONS: '{"module":"commonjs"}'
         run: |
           npx nx affected --target=lint --target=test --target=build \
