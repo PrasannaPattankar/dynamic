@@ -1,19 +1,22 @@
 {
-  "compileOnSave": false,
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "rootDir": ".",
-    "sourceMap": true,
-    "declaration": true,                  // ✅ MUST be true when composite is true
-    "composite": true,                    // ✅ Required for project references
-    "moduleResolution": "NodeNext",
+    "outDir": "../../dist/out-tsc",
     "module": "NodeNext",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "es2020",
-    "lib": ["es2020", "dom"],
-    "skipLibCheck": true,
-    "jsx": "react-jsx"
-  }
+    "moduleResolution": "NodeNext",
+    "types": [
+      "jest",
+      "node",
+      "@nx/react/typings/cssmodule.d.ts",
+      "@nx/react/typings/image.d.ts"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.d.ts",
+    "jest.config.ts"
+  ]
 }
