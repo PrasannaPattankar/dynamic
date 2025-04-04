@@ -9,7 +9,7 @@ export default {
   coverageDirectory: '../../coverage/packages/dashboard',
   globals: {
     'ts-jest': {
-      tsconfig: '<rootDir>/tsconfig.spec.json', // 👈 this is important!
+      tsconfig: '<rootDir>/tsconfig.spec.json', // ✅ important fix
     },
   },
 };
