@@ -2,8 +2,8 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "module": "NodeNext",                       // ✅ Required with moduleResolution: NodeNext
-    "moduleResolution": "NodeNext",             // ✅ Match with tsconfig.json if applicable
+    "module": "NodeNext",                       // ✅ required
+    "moduleResolution": "NodeNext",             // ✅ required
     "types": [
       "jest",
       "node",
@@ -12,15 +12,11 @@
     ]
   },
   "include": [
-    "jest.config.ts",
-    "src/**/*.test.ts",
-    "src/**/*.spec.ts",
-    "src/**/*.test.tsx",
-    "src/**/*.spec.tsx",
-    "src/**/*.test.js",
-    "src/**/*.spec.js",
-    "src/**/*.test.jsx",
-    "src/**/*.spec.jsx",
-    "src/**/*.d.ts"
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.d.ts",
+    "jest.config.ts"
   ]
 }

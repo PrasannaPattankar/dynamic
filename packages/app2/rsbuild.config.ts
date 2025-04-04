@@ -5,16 +5,16 @@ export default defineConfig({
   plugins: [pluginReact()],
   html: {
     title: 'App2',
-    template: './src/index.html', // ✅ makes sure to use the HTML file
+    template: './src/index.html', // ✅ Ensure this file exists
   },
   source: {
     entry: {
-      index: './src/main.tsx', // ✅ must match the new entry file
+      index: './src/main.tsx', // ✅ Entry point for your React app
     },
   },
   output: {
     distPath: {
-      root: '../../dist/packages/app2',
+      root: '../../dist/packages/app2', // ✅ Output directory
     },
   },
 });
