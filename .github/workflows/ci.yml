@@ -32,9 +32,10 @@ jobs:
       - name: Set base and head SHAs for affected
         uses: nrwl/nx-set-shas@v4
 
-      - name: Run affected targets
+      - name: Run affected targets (lint, test, build)
+        # ✅ Override only module to avoid TS5110, TS5098 while keeping nodenext compatibility
         env:
-          TS_NODE_COMPILER_OPTIONS: '{"module":"commonjs","moduleResolution":"node"}'
+          TS_NODE_COMPILER_OPTIONS: '{"module":"commonjs"}'
         run: |
           npx nx affected --target=lint --target=test --target=build \
             --base=$NX_BASE --head=$NX_HEAD --parallel
