@@ -33,6 +33,8 @@ jobs:
         uses: nrwl/nx-set-shas@v4
 
       - name: Run affected targets
+        env:
+          TS_NODE_COMPILER_OPTIONS: '{"module":"commonjs","moduleResolution":"node"}'
         run: |
           npx nx affected --target=lint --target=test --target=build \
             --base=$NX_BASE --head=$NX_HEAD --parallel
