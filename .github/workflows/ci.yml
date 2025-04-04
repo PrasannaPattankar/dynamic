@@ -33,8 +33,8 @@ jobs:
         uses: nrwl/nx-set-shas@v4
 
       - name: Run affected targets (lint, test, build)
-        # ✅ Override only module to avoid TS5110, TS5098 while keeping nodenext compatibility
         env:
+          TS_NODE_PROJECT: tsconfig.spec.json
           TS_NODE_COMPILER_OPTIONS: '{"module":"commonjs"}'
         run: |
           npx nx affected --target=lint --target=test --target=build \
