@@ -34,9 +34,9 @@ jobs:
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
 
-      # ✅ Fix: Ensure ts-node is available in the CI environment
-      - name: Install ts-node temporarily for ESM support
-        run: npm install --no-save ts-node
+      # ✅ Ensure ts-node is present
+      - name: Install ts-node for ESM/Jest support
+        run: npm install ts-node --no-save
 
       - name: Set base and head SHAs for affected
         uses: nrwl/nx-set-shas@v4
