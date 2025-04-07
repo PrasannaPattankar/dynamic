@@ -14,6 +14,11 @@ jobs:
   ci:
     runs-on: ubuntu-latest
 
+    env:  # ✅ Added environment block here to apply globally
+      TS_NODE_COMPILER_OPTIONS: '{"module":"NodeNext","moduleResolution":"NodeNext"}'
+      NODE_OPTIONS: "--loader ts-node/esm"
+      JEST_DISABLE_WARNINGS: true
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -33,10 +38,6 @@ jobs:
         uses: nrwl/nx-set-shas@v4
 
       - name: Run affected targets (lint, test, build)
-       env:
-  TS_NODE_COMPILER_OPTIONS: '{"module":"NodeNext","moduleResolution":"NodeNext"}'
-  NODE_OPTIONS: "--loader ts-node/esm"
-  JEST_DISABLE_WARNINGS: true
         run: |
           npx nx affected --target=lint --target=test --target=build \
             --base=$NX_BASE --head=$NX_HEAD --parallel --configuration=production
