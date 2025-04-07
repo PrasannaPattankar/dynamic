@@ -1,3 +1,8 @@
+/*** 
+ * File Name: rsbuild.config.ts
+ * Description: Its all about RsBuild configuration  how we do the set up for Rsbuld to build the enitre project 
+ * Author: Prasannakumar Pattankar
+ *  */
 import { defineConfig } from '@rsbuild/core';
 import { pluginReact } from '@rsbuild/plugin-react';
 

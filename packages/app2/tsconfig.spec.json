@@ -4,20 +4,7 @@
     "outDir": "../../dist/out-tsc",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "types": [
-      "jest",
-      "node",
-      "@nx/react/typings/cssmodule.d.ts",
-      "@nx/react/typings/image.d.ts"
-    ]
+    "types": ["jest", "node", "@nx/react/typings/cssmodule.d.ts", "@nx/react/typings/image.d.ts"]
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.js",
-    "src/**/*.jsx",
-    "src/**/*.d.ts",
-    "jest.config.ts"
-  ],
-  "exclude": ["node_modules"]
+  "include": ["src", "jest.config.ts"]
 }

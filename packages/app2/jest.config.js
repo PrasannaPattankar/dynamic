@@ -1,15 +1,15 @@
-export default {
-  displayName: 'app2', // change for app2, app1 etc.
-  preset: '../../jest.preset.js',
-  transform: {
-    '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nx/react/plugins/jest',
-    '^.+\\.[tj]sx?$': ['babel-jest', { presets: ['@nx/react/babel'] }],
-  },
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/packages/dashboard',
-  globals: {
-    'ts-jest': {
-      tsconfig: '<rootDir>/tsconfig.spec.json', // ✅ explicitly point to the correct one
-    },
+/** @type {import('ts-jest').JestConfigWithTsJest} */
+export const displayName = 'app2';
+export const preset = 'ts-jest/presets/default-esm';
+export const extensionsToTreatAsEsm = ['.ts', '.tsx'];
+export const transform = {
+  '^.+\\.[tj]sx?$': ['ts-jest', { useESM: true }],
+};
+export const moduleFileExtensions = ['ts', 'tsx', 'js', 'jsx'];
+export const coverageDirectory = '../../coverage/packages/app2';
+export const globals = {
+  'ts-jest': {
+    tsconfig: '<rootDir>/tsconfig.spec.json',
   },
 };
+export const testEnvironment = 'jsdom';

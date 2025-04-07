@@ -33,12 +33,10 @@ jobs:
         uses: nrwl/nx-set-shas@v4
 
       - name: Run affected targets (lint, test, build)
-        env:
-          # ✅ Helps ts-node & ts-jest parse NodeNext modules properly
-          TS_NODE_COMPILER_OPTIONS: '{"module":"NodeNext","moduleResolution":"NodeNext"}'
-          NODE_OPTIONS: "--loader ts-node/esm"
-          # ✅ Optional: quiet Jest deprecation warnings in CI
-          JEST_DISABLE_WARNINGS: true
+       env:
+  TS_NODE_COMPILER_OPTIONS: '{"module":"NodeNext","moduleResolution":"NodeNext"}'
+  NODE_OPTIONS: "--loader ts-node/esm"
+  JEST_DISABLE_WARNINGS: true
         run: |
           npx nx affected --target=lint --target=test --target=build \
             --base=$NX_BASE --head=$NX_HEAD --parallel --configuration=production
